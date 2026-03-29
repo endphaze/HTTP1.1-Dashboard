@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw Data Dashboard</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --accent-color: #2563eb;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+            overflow-x: auto;
+            max-height: 80vh;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 10px 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: #f1f5f9;
+            color: #475569;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--accent-color);
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+
+        .last-update {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/" class="nav-link">← Back to Dashboard</a>
+
+    <div class="header">
+        <h1>Raw Data (MongoDB)</h1>
+        <div class="controls">
+            <div class="last-update" id="lastUpdate">Last update: Never</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <table id="rawTable">
+            <thead id="tableHead">
+                <!-- Headers dynamically populated -->
+            </thead>
+            <tbody id="tableBody">
+                <!-- Rows dynamically populated -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="raw_data.js"></script>
+</body>
+
+</html>

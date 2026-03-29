@@ -1,0 +1,54 @@
+สร้างหน้า Dashboard ที่แสดงข้อมูลที่เก็บใน MongoDB
+โดยมีตัวอย่างข้อมูลใน document_structure.txt
+
+db_url = "mongodb://localhost:27017"
+db_name = "NetworkAnalysis"
+collection_name = "http_analysis_with_tcp3"
+
+สร้างกราฟแสดงข้อมูล
+- Request per Second
+# นับ ตารางที่มี type : "request" ต่อวินาที
+- Response per Second
+# นับ ตารางที่มี type : "response" ต่อวินาที
+- Average Response Time Per Second
+# หาเฉลี่ยของ response_time ต่อวินาที
+
+
+# ส่วนของกราฟเน้นให้ใหญ่ขึ้นหน่อย
+
+ตารางข้อมูลสถิติ
+Request & Response Per Second Statistics
+Request Per Second min, max, avg, stdev, p95, p99
+Response Per Second min, max, avg, stdev, p95, p99
+
+Response Time Statistics
+Response Time min, max, avg, stdev, p95, p99
+
+Request Size Statistics
+Request Size min, max, avg, stdev, p95, p99
+
+Top Endpoint
+# 5 อันดับ endpoint ที่มี request มากที่สุด
+เช่น
+Endpoint   | Request Count
+192.168.1.2 | 100
+192.168.1.3 | 50
+
+Top port
+# 5 อันดับ port ที่มี request มากที่สุด
+เช่น
+Port   | Request Count
+80     | 100
+443    | 50
+
+Dashboard เป็น Realtime fetch ข้อมูลทุก 5 วินาที (ปรับได้)
+
+ใช้ fastapi ทำ Backend ตัวเว็บไม่ต้องสวยมากเน้นใช้งาน ธีมขาว
+มีปุ่มกด Export เป็น pdf โดยมีขนาด A4 แนวตั้ง มีธีมเป็นรายงานทางการ
+
+ในรายงานมีกราฟแสดงข้อมูลตามหน้า dashboard
+และพวกข้อมูลอื่นๆ ทั้งหมดที่อยู่ในหน้า dashboard
+
+header ของรายงาน คือ Report of {ชื่อ Collection}
+
+

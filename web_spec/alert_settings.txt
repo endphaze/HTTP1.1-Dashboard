@@ -1,0 +1,11 @@
+ตั้งค่าการ Threshold การแจ้งเตือน
+1. ถ้า Response Time เกิน 100ms ให้แจ้งเตือน
+2. ถ้า Request Per Second เกิน 1000 ให้แจ้งเตือน
+3. ถ้า Response Per Second เกิน 1000 ให้แจ้งเตือน
+
+Threshold พวกนี้มีผลกับกราฟ คือ กราฟจุดที่เกิน Threshold จะเป็นสีแดง
+
+
+มีการแจ้งเตือนไปที่ discord โดยใช้ webhook ด้านล่าง
+https://discord.com/api/webhooks/1484488471883022398/NyCcWIt8ERC78WdTJze36xc4LdlP89Anp30D4zDVRCu7pPcuu1AjMewcYyLlG2Nq6MI-
+
